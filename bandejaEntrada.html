@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeja de Entrada</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                    <h3 class="panel-title float-left">Bandeja de entrada de tickets</h3>
+                    <i class="fa fa-plus fa-lg float-right" onclick="navigateTicket(0)"></i>
+                    <div class="cb"></div>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-filter fa-lg float-left"></i>
+                        <h3 class="panel-title float-left ml-10">
+                            Filtros de b&uacute;squeda
+                        </h3>
+                        <i class="fa fa-search fa-lg float-right" id="search" onclick="cargarBE()"></i>
+                        <i class="fa fa-eraser fa-lg float-right mr-10" onclick="limpiarFiltro()"></i>
+                        <div class="cb"></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="tNombre">T&iacute;tulo</label>
+                                    <input class="form-control" id="tNombre">
+                                  </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="tEstado">Estado</label>
+                                    <select class="form-control" id="tEstado">
+                                      <option value=0>Seleccionar...</option>
+                                    </select>
+                                  </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="tResponsable">Responsable</label>
+                                    <select class="form-control" id="tResponsable">
+                                      <option value=0>Seleccionar...</option>
+                                    </select>
+                                  </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="tCategoria">Categoria</label>
+                                    <select class="form-control" id="tCategoria">
+                                      <option value=0>Seleccionar...</option>
+                                    </select>
+                                  </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="tPrioridad">Prioridad</label>
+                                    <select class="form-control" id="tPrioridad">
+                                      <option value=0>Seleccionar...</option>
+                                    </select>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-tasks fa-lg float-left"></i>
+                        <h3 class="panel-title float-left ml-10">
+                            Bandeja de entrada
+                        </h3>
+                        <div class="cb"></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <select class="form-control w-150 float-right" id="ascendenteDescendente">
+                                    <option value="ASC">Ascendente</option>
+                                    <option value="DESC">Descendente</option>
+                                </select>
+                                <select class="form-control w-150 float-right mr-10" id="ordenamiento">
+                                    <option value="Titulo">Titulo</option>
+                                    <option value="Estado">Estado</option>
+                                    <option value="FechaCreacion">Fecha Creacion</option>
+                                </select>
+                                <div class="cb m-10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="ticketsContainer">
+                        <div class="col-xs-12 h-75" style="display: flex; align-items: center; margin-bottom: 2px;">
+                            <div class="h-100perCent w-25 float-left p" style="background-color: teal;">
+                                <i class="fa fa-thumbtack fa-sm" style="color: white; margin: 7.5px;"></i>
+                            </div>
+                            <div class="float-left p-10 h-100perCen">
+                                <p><strong>Mandar mails a</strong> en estado <strong>Cerrado</strong></p>
+                                <p>
+                                    <i class="fa fa-user fa-sm"></i>
+                                    <strong>Responsable: </strong>Alex&nbsp;
+                                    <i class="fa fa-cog fa-sm"></i>
+                                    <strong>Categoria: </strong>Tarea&nbsp;
+                                    <i class="fa fa-eye fa-sm"></i>
+                                    <strong>Prioridad: </strong>Alta&nbsp;
+                                    <i class="fa fa-calendar-alt fa-sm"></i>
+                                    <strong>Fecha de creaci&oacute;n:</strong>12/05/5
+                                </p>
+                            </div>
+                            <div class="float-right" style="margin-right: 10px; margin-left: auto;">
+                                <i class="fa fa-info-circle fa-2x"></i>
+                            </div>
+                            <div class="cb"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="panel-footer" style="display: flex; align-items: center; position: relative;">
+                        <div class="" style="margin-left: 0 !important; margin-right: 0 !important; position: absolute;">
+                            Mostrar:
+                        </div>
+                        <div class="" style="margin-left: 10px !important; margin-right: 0 !important;position: absolute; left: 75px;">
+                            <select class="form-control w-75" id="elementosPorPagina">
+                                <option value=25>25</option>
+                                <option value=50>50</option>
+                                <option value=100>100</option>
+                            </select>
+                        </div>
+                        <div class="float-left" style="margin-left: auto !important; margin-right: auto !important;">
+                            <nav aria-label="">
+                                <ul id="paginacion"class="pagination" style="margin: 0 !important;">
+                                  
+                                </ul>
+                              </nav>
+                        </div>
+                        <div class="cb"></div>
+                        
+                    </div>
+                </div>    
+            </div>
+          </div>
+    </div>
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bandejaEntrada.js"></script>
+    <script src="js/bootstrap-3.3.7.min.js"></script>
+    <script src="js/font-awesome-5.5.0.min.js"></script>
+</body>
+
+</html>

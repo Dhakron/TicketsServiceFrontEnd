@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title float-left">Ticket</h3>
+                <i class="fa fa-arrow-left fa-lg float-right" onclick="window.history.go(-1); return false;"></i>
+                <i id="editarTicket" class="fa fa-pencil-alt fa-lg float-right mr-10"></i>
+                <i id="actualizarTicket" class="fa fa-sync fa-lg float-right mr-10" onclick=""></i>
+                <div class="cb"></div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-info fa-lg float-left"></i>
+                                <h3 class="panel-title float-left ml-10" id="tittlePage">
+                                    <strong>Información</strong>
+                                </h3>
+                                <div class="cb"></div>
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-leftheading color-gris">
+                                        <i class="fa fa-map-marker-alt fa-sm center-aling"></i>
+                                    </div>
+                                    <div class="panel-rightbody">
+                                        <div class="row">
+                                            <div class="col-xs-7">
+                                                <p><strong>Número de Ticket:</strong></p>
+                                            </div>
+                                            <div id="tId" class="col-xs-5">
+                                                <p>2233</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p><strong>Nombre del Ticket:</strong></p>
+                                            </div>
+                                            <div id="tNombre" class="col-xs-5">
+                                                <p>Aqui el nombre del ticket</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p><strong>Prioridad:</strong></p>
+                                            </div>
+                                            <div id="tPrioridad" class="col-xs-5">
+                                                <p>aqui la prioridad</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-leftheading color-gris">
+                                        <i class="fa fa-user-tie fa-sm center-aling"></i>
+                                    </div>
+                                    <div class="panel-rightbody">
+                                        <div class="row">
+                                            <div class="col-xs-7">
+                                                <p><strong>Nombre del Responsable:</strong></p>
+                                            </div>
+                                            <div id="tResponsable" class="col-xs-5">
+                                                <p>Carlos</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-leftheading color-gris">
+                                        <i class="fa fa-tasks fa-sm center-aling"></i>
+                                    </div>
+                                    <div class="panel-rightbody">
+                                        <div class="row">
+                                            <div class="col-xs-7">
+                                                <p><strong>Estado:</strong></p>
+                                            </div>
+                                            <div id="tEstado" class="col-xs-5">
+                                                <p>Bien</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p><strong>Fecha de Creación</strong></p>
+                                            </div>
+                                            <div id="tFecha" class="col-xs-5">
+                                                <p>56546</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p><strong>Categoría:</strong></p>
+                                            </div>
+                                            <div id="tCategoria" class="col-xs-5">
+                                                <p>22sdf33</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cb"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-history fa-lg float-left"></i>
+                                <h3 class="panel-title float-left ml-10 " id="tittlePage">
+                                    <strong>Seguimiento</strong>
+                                </h3>
+                                <div class="cb"></div>
+                            </div>
+                            <div id="historialTicket" class="panel-body m-10 p-0">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-user-edit fa-lg float-left ml-10"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="media-heading"><strong>El ticket se ha modificado</strong></p>
+                                        <p>Prioridad: <span>hola</span></p>
+                                        <p>Categoría: <span>adios</span></p>
+                                        <small class="color-gris-letra">Hola buenos dias</small>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-certificate fa-lg float-left ml-10"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="media-heading"><strong>Se crea el ticket.</strong></p>
+                                        <small class="color-gris-letra">Hola buenos dias</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/visualizacion.js"></script>
+        <script src="js/bootstrap-3.3.7.min.js"></script>
+        <script src="js/font-awesome-5.5.0.min.js"></script>
+</body>
+
+</html>
